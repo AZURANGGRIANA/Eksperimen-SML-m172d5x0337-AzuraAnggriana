@@ -1,0 +1,25 @@
+Nama  : Azura Anggriana
+ID    : m172d5x0337
+Proyek: Submission Proyek Akhir Membangun Sistem Machine Learning
+
+Repository Workflow CI:
+- https://github.com/AZURANGGRIANA/Workflow-CI_m172d5x0337_AzuraAnggriana
+
+Deskripsi singkat:
+- Workflow GitHub Actions menjalankan training model Logistic Regression
+  untuk kasus Fraud Detection menggunakan MLflow Project.
+- File workflow berada di: .github/workflows/mlflow-ci.yml
+- File MLproject dan script training ada di folder: MLProject/
+
+Langkah yang dilakukan workflow:
+1. Checkout repository
+2. Setup Python 3.12
+3. Install dependency (mlflow, pandas, numpy, scikit-learn, matplotlib)
+4. Menjalankan MLflow Project:
+   - mlflow run . --env-manager local --entry-point main
+5. Menyimpan artifact MLflow (folder mlruns) sebagai artifact GitHub Actions.
+
+Status terakhir:
+- Run: "Remove set_experiment and fix MLflow run conflict"
+- Job: train-model → **Success** (green)
+- Durasi sekitar 6–7 menit.

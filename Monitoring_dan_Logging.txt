@@ -1,0 +1,7 @@
+Pada tahap monitoring dan logging, sistem dilengkapi dengan Prometheus dan Grafana untuk 
+memantau performa layanan model selama proses inference. Prometheus digunakan untuk melakukan
+scraping metrics dari custom exporter yang berjalan pada endpoint /metrics, yang mencakup metrik
+penggunaan CPU, penggunaan RAM, jumlah permintaan inference, latency inference, serta nilai prediksi
+model. Seluruh metrics berhasil terdeteksi dengan status target UP pada Prometheus. Selanjutnya, Grafana 
+digunakan untuk memvisualisasikan metrics tersebut dalam bentuk dashboard yang terdiri dari beberapa panel
+utama, sehingga memudahkan pemantauan performa sistem dan stabilitas layanan model secara real-time.
