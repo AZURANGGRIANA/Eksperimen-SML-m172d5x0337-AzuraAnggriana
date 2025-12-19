@@ -7,6 +7,7 @@ Link GitHub project:
 https://github.com/AZURANGGRIANA/Workflow-CI_m172d5x0337_AzuraAnggriana
 
 Link GitHub eksperiment preprocessing notebook:
+https://github.com/AZURANGGRIANA/Eksperimen-SML-m172d5x0337-AzuraAnggriana
 
 
 1. INFORMASI DATASET
