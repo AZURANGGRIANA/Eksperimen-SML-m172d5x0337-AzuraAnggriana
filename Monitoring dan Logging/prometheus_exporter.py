@@ -3,9 +3,7 @@ import psutil
 import time
 import random
 
-# =========================
 # SYSTEM METRICS
-# =========================
 cpu_usage = Gauge(
     "cpu_usage_percent",
     "CPU usage percentage"
@@ -16,9 +14,13 @@ ram_usage = Gauge(
     "RAM usage percentage"
 )
 
-# =========================
+START_TIME = time.time()
+uptime_seconds = Gauge(
+    "uptime_seconds",
+    "Uptime of exporter in seconds"
+)
+
 # INFERENCE METRICS
-# =========================
 inference_requests_total = Counter(
     "inference_requests_total",
     "Total number of inference requests"
@@ -35,14 +37,15 @@ model_prediction_value = Gauge(
     "Latest model prediction output (simulated)"
 )
 
-# =========================
 # METRIC COLLECTOR
-# =========================
 def collect_metrics():
     while True:
         # CPU & RAM
         cpu_usage.set(psutil.cpu_percent())
         ram_usage.set(psutil.virtual_memory().percent)
+
+        # Uptime exporter
+        uptime_seconds.set(time.time() - START_TIME)
 
         # Simulasi inference
         start_time = time.time()
@@ -56,9 +59,7 @@ def collect_metrics():
 
         time.sleep(5)
 
-# =========================
 # MAIN
-# =========================
 if __name__ == "__main__":
     print("Starting Prometheus exporter on port 8000...")
     start_http_server(8000)
